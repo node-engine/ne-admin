@@ -1,6 +1,6 @@
 {
   "name": "ne-admin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Description",
   "main": "index.js",
   "scripts": {
@@ -24,15 +24,14 @@
   },
   "homepage": "https://github.com/node-engine/ne-admin#readme",
   "dependencies": {
+    "axios": "^0.7.0",
     "express": "^4.13.3",
-    "express-jwt": "^3.1.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
-    "jsonwebtoken": "^5.4.0",
     "lodash": "^3.10.1",
-    "mongoose": "^4.1.9"
+    "ne-handler": "^1.0.1",
+    "react": "^0.14.0"
   },
   "readme": "# ne-admin (Node Engine Admin)",
   "readmeFilename": "readme.md"
-
 }
