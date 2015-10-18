@@ -7,16 +7,16 @@ var neLocalStrategyRoutes = function (server){
     router.post('/change/*', function(req, res, next) {
 
         /*
-            var userId = req.claims.user;
+         var userId = req.claims.user;
 
-            if(checkPermissionsReturn([userId, 'admin'],req) === true) {
-                next();
-            }
-            else {
-                res.redirect('/login?message=AccessDenied:InsufficientPermissions').status(401);
-            }
+         if(checkPermissionsReturn([userId, 'admin'],req) === true) {
+         next();
+         }
+         else {
+         res.redirect('/login?message=AccessDenied:InsufficientPermissions').status(401);
+         }
 
-        */
+         */
         next();
 
     })
@@ -25,11 +25,11 @@ var neLocalStrategyRoutes = function (server){
 
         if (req.body.limit){
             if (req.body.batch){
-                var redirectPath = '/admin/' + req.body.api + "?message=Page " + req.body.batch + "&limit=" + req.body.limit + "&batch=" + req.body.batch;
+                var redirectPath = '/admin/' + req.body.api + "?limit=" + req.body.limit + "&batch=" + req.body.batch;
                 return res.redirect(redirectPath);
             }
             else {
-                var redirectPath = '/admin/' + req.body.api + "?message=Limit changed " + req.body.limit + "&limit=" + req.body.limit;
+                var redirectPath = '/admin/' + req.body.api + "?limit=" + req.body.limit;
                 return res.redirect(redirectPath);
             }
         }
@@ -44,7 +44,7 @@ var neLocalStrategyRoutes = function (server){
 
         if (req.body.limit){
             if (req.body.batch){
-                var redirectPath = '/admin/' + req.body.api + "?message=Page " + req.body.batch + "&limit=" + req.body.limit + "&batch=" + req.body.batch;
+                var redirectPath = '/admin/' + req.body.api + "?limit=" + req.body.limit + "&batch=" + req.body.batch;
                 return res.redirect(redirectPath);
             }
             else {
