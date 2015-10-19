@@ -9,7 +9,7 @@ var meta = {
     description: "Add, edit, delete and view content",
     css: [
         "/ne-style.css",
-        "/ne-admin/ne-css/style.css"
+        "/neAdminStyle.css"
     ],
     nerbArray: [
         {
