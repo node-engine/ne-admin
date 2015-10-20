@@ -1,7 +1,19 @@
-var React = require('react');
+if (process.env.NE_AUTO) {
+
+    var React = require(process.env.NE_AUTO).react;
+    var neHandler = require(process.env.NE_AUTO).neHandler;
+    var _ = require(process.env.NE_AUTO).lodash;
+
+}
+else {
+
+    var React = require('react');
+    var neHandler = require('ne-handler');
+    var _ = require("lodash");
+}
+
 var element = React.createElement;
-var neHandler = require('ne-handler');
-var _ = require("lodash");
+
 
 var meta = {
     path: "/admin",

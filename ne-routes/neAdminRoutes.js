@@ -1,6 +1,17 @@
-var express = require('express');
+if (process.env.NE_AUTO) {
+
+    var express = require(process.env.NE_AUTO).express;
+    var axios = require(process.env.NE_AUTO).axios;
+
+}
+else {
+
+    var express = require('express');
+    var axios = require('axios');
+}
+
 var router = express.Router();
-var axios = require('axios');
+
 
 var neLocalStrategyRoutes = function (server){
 
