@@ -1,6 +1,6 @@
 {
   "name": "ne-admin",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Description",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
     "lodash": "^3.10.1",
+    "ne-auto-off": "^1.0.0",
     "ne-handler": "latest",
     "react": "^0.14.0"
   },

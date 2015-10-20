@@ -19,6 +19,13 @@ Dependencies
 - DU Update Dependency: A dependency is updated in the package
 
 
+# 1.4.1
+
+Release date: 20151021
+
+Fixes bugs cuase by 1.4.0
+
+
 # 1.4.0
 
 Release date: 20151020
