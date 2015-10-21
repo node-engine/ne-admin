@@ -1,6 +1,6 @@
 {
   "name": "ne-admin",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Description",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "lodash": "^3.10.1",
     "ne-auto-off": "^1.0.0",
     "ne-handler": "latest",
-    "react": "^0.14.0"
+    "react": "^0.13.3"
   },
   "readme": "# ne-admin (Node Engine Admin)",
   "readmeFilename": "readme.md"
