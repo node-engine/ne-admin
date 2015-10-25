@@ -505,23 +505,78 @@ var handler = React.createClass({
         addItemFields.push(element(
             'input',
             {type: "hidden", name: "limit", defaultValue: self.props.meta.query.limit}
-        ))
+        ));
         addItemFields.push(element(
             'input',
             {type: "hidden", name: "batch", defaultValue: self.props.meta.query.batch}
-        ))
+        ));
         addItemFields.push(element(
             'input',
             {type: "hidden", name: "data", defaultValue: self.props.meta.params.dataName}
-        ))
+        ));
         addItemFields.push(element(
             'input',
             {type: "hidden", name: "token", defaultValue: self.props.meta.token}
-        ))
+        ));
 
         self.props.dataRef[dataRefIndex].fields.forEach(function(field, index){
 
-            if(field.type && field.type === "ObjectId"){
+            if(field.editType && field.editType === "select"){
+
+                var selectOptions = field.selectOptions.map(function(option, index3){
+
+                    return element(
+                        "option",{value: option, key: index3},
+                        option
+                    )
+
+                });
+
+                addItemFields.push(element(
+                    'label', {},
+                    field.label + " -> "
+                ));
+
+                addItemFields.push(element(
+                    'br', {}
+                ));
+
+                addItemFields.push(element(
+                    'br', {}
+                ));
+
+                addItemFields.push(element(
+                    "select", {name: field.data},
+                    selectOptions
+                ));
+                addItemFields.push(element(
+                    'br',
+                    {}
+                ));
+
+            }
+            else if(field.editType && field.editType === "textarea"){
+
+                addItemFields.push(element(
+                    'label', {},
+                    field.label + " -> "
+                ));
+
+                addItemFields.push(element(
+                    'br', {}
+                ));
+
+                addItemFields.push(element(
+                    "textarea",
+                    {name: field.data}
+                ));
+                addItemFields.push(element(
+                    'br',
+                    {}
+                ));
+
+            }
+            else if(field.type && field.type === "ObjectId"){
 
                 addItemFields.push(element(
                     'label',
@@ -553,11 +608,11 @@ var handler = React.createClass({
                     'label',
                     {},
                     field.data
-                ))
+                ));
                 addItemFields.push(element(
                     'br',
                     {}
-                ))
+                ));
                 addItemFields.push(element(
                     "input",
                     { type: "text", name: field.data, placeholder: field.data,
@@ -566,7 +621,7 @@ var handler = React.createClass({
                         }
 
                     }
-                ))
+                ));
                 addItemFields.push(element(
                     'br',
                     {}
@@ -574,7 +629,7 @@ var handler = React.createClass({
 
             }
 
-        })
+        });
 
         var addItem;
         if (self.props.dataRef[dataRefIndex].type === "noEdit"){

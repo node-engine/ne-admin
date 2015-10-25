@@ -13,6 +13,18 @@
 - [DU] Update Dependency: A dependency is updated in the package
 
 
+# 1.4.5
+
+Release date: 20151025
+
+[FN]
+Added support for dataRef.editType: "select" to the add new
+
+[FN]
+Added support for dataRef.editType: "textarea" to the add new
+
+
+
 # 1.4.4
 
 Release date: 20151025
