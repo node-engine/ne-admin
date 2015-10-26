@@ -13,6 +13,17 @@
 - [DU] Update Dependency: A dependency is updated in the package
 
 
+# 1.4.6
+
+Release date: 20151026
+
+[BF]
+- Input fields in Edit and Add forms to 80% width 
+- change from 3 per line to 1 edit item per line
+
+
+
+
 # 1.4.5
 
 Release date: 20151025

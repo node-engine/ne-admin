@@ -473,7 +473,7 @@ var handler = React.createClass({
                         "div",
                         {
                             key: index ,
-                            className: "ne-ccol-3m ne-admin-item-edit"},
+                            className: "ne-ccol-1m ne-admin-item-edit"},
                         element(
                             "div",
                             {className: "ne-ccol-1s "},
