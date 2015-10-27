@@ -250,26 +250,6 @@ var handler = React.createClass({
                         "form",
                         { action: "/admin/change/delete/", method: "post" },
                         element(
-                            'input',
-                            {type: "hidden", name: "limit", defaultValue: self.props.meta.query.limit}
-                        ),
-                        element(
-                            'input',
-                            {type: "hidden", name: "batch", defaultValue: self.props.meta.query.batch}
-                        ),
-                        element(
-                            'input',
-                            {type: "hidden", name: "data", defaultValue: self.props.meta.params.dataName}
-                        ),
-                        element(
-                            'input',
-                            {type: "hidden", name: "token", defaultValue: self.props.meta.token,}
-                        ),
-                        element(
-                            'input',
-                            {type: "hidden", name: "_id", defaultValue: object._id,}
-                        ),
-                        element(
                             'br',
                             {}
                         ),
@@ -292,8 +272,7 @@ var handler = React.createClass({
                         if(field.editType && field.editType === "noEdit"){
 
                             editItem.push(element(
-                                'div',
-                                {id: index2, key: index2, className: "ne-admin-item-field-edit-form"},
+                                'div', {id: index2, key: index2, className: "ne-admin-item-field-edit-form"},
                                 element(
                                     'label',
                                     {},
@@ -324,51 +303,27 @@ var handler = React.createClass({
                             })
 
                             editItem.push(element(
-                                'div',
-                                {id: index2, key: index2, className: "ne-admin-item-field-edit-form"},
+                                'div', {id: index2, key: index2, className: "ne-admin-item-field-edit-form"},
                                 element(
-                                    "form", { action: "/admin/change/put/", method: "post"},
-                                    element(
-                                        'input', {type: "hidden", name: "limit", defaultValue: self.props.meta.query.limit}
-                                    ),
-                                    element(
-                                        'input', {type: "hidden", name: "batch", defaultValue: self.props.meta.query.batch}
-                                    ),
-                                    element(
-                                        'input',
-                                        {type: "hidden", name: "data", defaultValue: self.props.meta.params.dataName}
-                                    ),
-                                    element(
-                                        'input', {type: "hidden", name: "token", defaultValue: self.props.meta.token,}
-                                    ),
-                                    element(
-                                        'input', {type: "hidden", name: "_id", defaultValue: flatObject._id}
-                                    ),
-                                    element(
-                                        'label', {},
-                                        field.label + " -> "
-                                    ),
-                                    element(
-                                        'br', {}
-                                    ),
-                                    element(
-                                        "label", {},
-                                        flatObject[field.data]
-                                    ),
-                                    element(
-                                        'br', {}
-                                    ),
-                                    element(
-                                        "select", { type: "text", name: field.data, placeholder: flatObject[field.data]},
-                                        selectOptions
-                                    ),
-                                    element(
-                                        'br', {}
-                                    ),
-                                    element(
-                                        "button", { type: "submit" , className: "ne-admin-btn ne-admin-item-field-edit-button" },
-                                        "Change " + field.label
-                                    )
+                                    'label', {},
+                                    field.label + " -> "
+                                ),
+                                element(
+                                    'br', {}
+                                ),
+                                element(
+                                    "label", {},
+                                    flatObject[field.data]
+                                ),
+                                element(
+                                    'br', {}
+                                ),
+                                element(
+                                    "select", { type: "text", name: field.data, defaultValue: flatObject[field.data]},
+                                    selectOptions
+                                ),
+                                element(
+                                    'br', {}
                                 )
                             ))
 
@@ -379,44 +334,21 @@ var handler = React.createClass({
 
 
                             editItem.push(element(
-                                'div',
-                                {id: index2, key: index2, className: "ne-admin-item-field-edit-form"},
+                                'div', {id: index2, key: index2, className: "ne-admin-item-field-edit-form"},
                                 element(
-                                    "form", {action: "/admin/change/put/", method: "post"},
-                                    element(
-                                        'input', {type: "hidden", name: "limit", defaultValue: self.props.meta.query.limit}
-                                    ),
-                                    element(
-                                        'input', {type: "hidden", name: "batch", defaultValue: self.props.meta.query.batch}
-                                    ),
-                                    element(
-                                        'input', {type: "hidden", name: "data", defaultValue: self.props.meta.params.dataName}
-                                    ),
-                                    element(
-                                        'input', {type: "hidden", name: "token", defaultValue: self.props.meta.token,}
-                                    ),
-                                    element(
-                                        'input', {type: "hidden", name: "_id", defaultValue: flatObject._id}
-                                    ),
-                                    element(
-                                        'label', {},
-                                        field.label + " -> "
-                                    ),
-                                    element(
-                                        'br', {}
-                                    ),
-                                    element(
-                                        "textarea",
-                                        {name: field.data},
-                                        flatObject[field.data]
-                                    ),
-                                    element(
-                                        'br', {}
-                                    ),
-                                    element(
-                                        "button", {type: "submit" , className: "ne-admin-btn ne-admin-item-field-edit-button" },
-                                        "Change " + field.label
-                                    )
+                                    'label', {},
+                                    field.label + " -> "
+                                ),
+                                element(
+                                    'br', {}
+                                ),
+                                element(
+                                    "textarea",
+                                    {name: field.data},
+                                    flatObject[field.data]
+                                ),
+                                element(
+                                    'br', {}
                                 )
                             ))
 
@@ -425,44 +357,22 @@ var handler = React.createClass({
                         else{
 
                             editItem.push(element(
-                                'div',
-                                {id: index2, key: index2, className: "ne-admin-item-field-edit-form"},
+                                'div', {id: index2, key: index2, className: "ne-admin-item-field-edit-form"},
                                 element(
-                                    "form", {action: "/admin/change/put/", method: "post"},
-                                    element(
-                                        'input', {type: "hidden", name: "limit", defaultValue: self.props.meta.query.limit}
-                                    ),
-                                    element(
-                                        'input', {type: "hidden", name: "batch", defaultValue: self.props.meta.query.batch}
-                                    ),
-                                    element(
-                                        'input', {type: "hidden", name: "data", defaultValue: self.props.meta.params.dataName}
-                                    ),
-                                    element(
-                                        'input', {type: "hidden", name: "token", defaultValue: self.props.meta.token,}
-                                    ),
-                                    element(
-                                        'input', {type: "hidden", name: "_id", defaultValue: flatObject._id}
-                                    ),
-                                    element(
-                                        'label', {},
-                                        field.label + " -> "
-                                    ),
-                                    element(
-                                        'br', {}
-                                    ),
-                                    element(
-                                        "input",
-                                        {type: "text", name: field.data, placeholder: flatObject[field.data]}
-                                    ),
-                                    element(
-                                        'br', {}
-                                    ),
-                                    element(
-                                        "button", {type: "submit" , className: "ne-admin-btn ne-admin-item-field-edit-button" },
-                                        "Change " + field.label
-                                    )
+                                    'label', {},
+                                    field.label + " -> "
+                                ),
+                                element(
+                                    'br', {}
+                                ),
+                                element(
+                                    "input",
+                                    {type: "text", name: field.data, defaultValue: flatObject[field.data]}
+                                ),
+                                element(
+                                    'br', {}
                                 )
+
                             ))
 
                         }
@@ -470,16 +380,39 @@ var handler = React.createClass({
                     })
 
                     return element(
-                        "div",
-                        {
-                            key: index ,
-                            className: "ne-ccol-1m ne-admin-item-edit"},
+                        "div", {key: index , className: "ne-ccol-2l ne-admin-item-edit"},
                         element(
-                            "div",
-                            {className: "ne-ccol-1s "},
-                            editItem,
-                            deleteItem
-                        )
+                            "div", {},
+                            element(
+                                "form", { action: "/admin/change/put/", method: "post"},
+                                element(
+                                    'input',
+                                    {type: "hidden", name: "limit", defaultValue: self.props.meta.query.limit}
+                                ),
+                                element(
+                                    'input',
+                                    {type: "hidden", name: "batch", defaultValue: self.props.meta.query.batch}
+                                ),
+                                element(
+                                    'input',
+                                    {type: "hidden", name: "data", defaultValue: self.props.meta.params.dataName}
+                                ),
+                                element(
+                                    'input',
+                                    {type: "hidden", name: "token", defaultValue: self.props.meta.token,}
+                                ),
+                                element(
+                                    'input',
+                                    {type: "hidden", name: "_id", defaultValue: object._id,}
+                                ),
+                                editItem,
+                                element(
+                                    "button", {type: "submit" , className: "ne-admin-btn ne-admin-item-update-button" },
+                                    "Update"
+                                )
+                            )
+                        ),
+                        deleteItem
                     )
                 });
 
@@ -759,7 +692,7 @@ var handler = React.createClass({
 
             </div>
 
-            <div className="ne-row-640">
+            <div className="ne-row-960">
 
                 {items}
 
