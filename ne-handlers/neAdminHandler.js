@@ -25,39 +25,69 @@ var handler = React.createClass({
 
         console.log(self.props);
 
-        var navTopLinks = []
         var dataLinks = [];
+        var navTopLinks = [];
 
-        self.props.dataRef.forEach(function(ref, index){
+        if(self.props.meta && self.props.meta.token){
 
-            if(ref.name === "negulpdatatest"){
+            self.props.dataRef.forEach(function(ref, index){
+                if(ref.name === "negulpdatatest"){
 
-                console.log("neAdmin naAdminApiEditHandler: datatest skipped on purpose")
-            }
-            else {
-                navTopLinks.push(element(
-                    'li',
-                    {className: "ne-admin-nav-top-link"},
+                    console.log("neAdmin naAdminApiEditHandler: datatest skipped on purpose")
+                }
+                else {
+                    navTopLinks.push(element(
+                        'li',
+                        {className: "ne-admin-nav-top-link"},
+                        element(
+                            'a',
+                            {href: ref.slug + "?limit=3&batch=1" + "&token=" + self.props.meta.token },
+                            ref.name
+                        )
+                    ));
+
+                    dataLinks.push(element(
+                        'div',
+                        {className: "ne-ccol-3s ne-admin-link-box"},
+                        element(
+                            'a',
+                            {href: ref.slug + "?limit=3&batch=1"  + "&token=" + self.props.meta.token},
+                            ref.name
+                        )
+                    ))
+                }
+            })
+        }
+        else{
+            self.props.dataRef.forEach(function(ref, index){
+
+                if(ref.name === "negulpdatatest"){
+
+                    console.log("neAdmin naAdminApiEditHandler: datatest skipped on purpose")
+                }
+                else {
+                    navTopLinks.push(element(
+                        'li',
+                        {className: "ne-admin-nav-top-link"},
+                        element(
+                            'a',
+                            {href: ref.slug + "?limit=3&batch=1"},
+                            ref.name
+                        )
+                    ))
+                }
+
+                dataLinks.push(element(
+                    'div',
+                    {className: "ne-ccol-3s ne-admin-link-box"},
                     element(
                         'a',
                         {href: ref.slug + "?limit=3&batch=1"},
                         ref.name
                     )
                 ))
-            }
-
-            dataLinks.push(element(
-                'div',
-                {className: "ne-ccol-3s ne-admin-link-box"},
-                element(
-                    'a',
-                    {href: ref.slug + "?limit=3&batch=1"},
-                    ref.name
-                )
-            ))
-
-        })
-
+            })
+        }
 
         return (
             <body>

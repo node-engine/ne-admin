@@ -13,6 +13,13 @@
 - [DU] Update Dependency: A dependency is updated in the package
 
 
+# 1.4.8
+
+Release date: 20151028
+
+[BF]
+- delete button fixed
+
 # 1.4.7
 
 Release date: 20151027

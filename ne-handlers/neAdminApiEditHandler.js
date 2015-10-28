@@ -250,6 +250,26 @@ var handler = React.createClass({
                         "form",
                         { action: "/admin/change/delete/", method: "post" },
                         element(
+                            'input',
+                            {type: "hidden", name: "limit", defaultValue: self.props.meta.query.limit}
+                        ),
+                        element(
+                            'input',
+                            {type: "hidden", name: "batch", defaultValue: self.props.meta.query.batch}
+                        ),
+                        element(
+                            'input',
+                            {type: "hidden", name: "data", defaultValue: self.props.meta.params.dataName}
+                        ),
+                        element(
+                            'input',
+                            {type: "hidden", name: "token", defaultValue: self.props.meta.token}
+                        ),
+                        element(
+                            'input',
+                            {type: "hidden", name: "_id", defaultValue: object._id}
+                        ),
+                        element(
                             'br',
                             {}
                         ),
@@ -412,7 +432,10 @@ var handler = React.createClass({
                                 )
                             )
                         ),
-                        deleteItem
+                        element(
+                            "div", {},
+                            deleteItem
+                        )
                     )
                 });
 
